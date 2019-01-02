@@ -17,6 +17,7 @@
 	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="assets/js/where-am-i.js"></script>
 </head>
 <body>
 
@@ -30,13 +31,14 @@
 			</div>
 
 			<div id="game-embed-container">
+				<img src="assets/imgs/iphone-mock.png" class="bg-image">
 				<iframe src="http://www.flizzet.com/private/almostahero/index.html" frameborder="0" id="game-embed-frame" scrolling="no"></iframe>
 			</div>
 
 		</div>
 
 		<!-- About -->
-		<div id="about" class="full-page">
+		<div id="about" class="full-page" data-wai-page="about">
 			<div class="container">
 				<!-- Currently -->
 				<h2>Currently</h2>
@@ -52,14 +54,14 @@
 		</div>
 
 		<!-- Skills -->
-		<div id="skills" class="full-page">
+		<div id="skills" class="full-page" data-wai-page="Skills">
 			<div class="container">
 				<h1>Skills</h1>
 			</div>
 		</div>
 
 		<!-- Worked on -->
-		<div id="worked-on" class="full-page">
+		<div id="worked-on" class="full-page" data-wai-page="Worked On">
 			<div class="container">
 				<h1>Worked on</h1>
 			</div>
@@ -92,5 +94,15 @@
 
 	</div>
 
+	<!-- WhereAmI -->
+	<script>
+		WAI.init();
+	</script>
+
 </body>
+
+<footer>
+
+</footer>
+
 </html>

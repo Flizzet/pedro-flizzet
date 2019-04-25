@@ -132,11 +132,19 @@
     height: 100%;
     padding: var(--defaultpadding);
 }
+.right .project-description {
+    left: 0px;
+    right: auto;
+    justify-content: flex-start;
+}
 .project-description .project-info {
     width: 75%;
     color: black;
     font-size: 1.2vw;
     text-align: right;
+}
+.right .project-description .project-info {
+    text-align: left;
 }
 
 /* Portrait styling */

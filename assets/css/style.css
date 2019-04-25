@@ -29,4 +29,5 @@ body {
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
   padding-left: 15px;
+  z-index: 999;
 }

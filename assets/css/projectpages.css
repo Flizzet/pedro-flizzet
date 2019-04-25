@@ -1,9 +1,25 @@
+/* Page itself */
 .project-page {
     position: relative;
-    border: 1px solid red;
     background-color: var(--lightgray);
     padding: var(--defaultpadding);
 }
+.project-page::after {
+    content: "";
+    position: absolute;
+    width: 150%;
+    left: 50%;
+    bottom: 0px;
+    height: 4vh;
+    transform: translate(-50%, 50%) rotate(1deg);
+    background-color: var(--darkblue);
+    z-index: 99;
+}
+.project-page.right::after {
+    transform: translate(-50%, 50%) rotate(-1deg);
+}
+
+/* Images */
 .project-page-img {
     display: flex;
     justify-content: center;

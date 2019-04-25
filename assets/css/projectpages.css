@@ -98,10 +98,10 @@
 .project-page-img:hover::after {
     opacity: 1;
     font-size: 3vw;
-    box-shadow: inset -20px 0px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: inset -25px 0px 15px rgba(0, 0, 0, 0.4);
 }
 .right .project-page-img:hover::after {
-    box-shadow: inset 20px 0px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 25px 0px 15px rgba(0, 0, 0, 0.4);
 }
 .project-page-img:hover img {
     transform: scale(1.05);
@@ -137,4 +137,59 @@
     color: black;
     font-size: 1.2vw;
     text-align: right;
+}
+
+/* Portrait styling */
+@media (orientation: portrait) {
+    .project-header {
+        font-size: 6vw;
+    }
+    .project-page-img {
+        max-width: 100%;
+        max-height: 20%;
+    }
+    .right .project-page-img:hover,
+    .project-page-img:hover {
+        border-width: 0px;
+    }
+    .project-page-img::after {
+        justify-content: center;
+        align-items: center;
+    }
+    .project-page-img:hover::after {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding: var(--defaultpadding);
+    }
+    .right .project-page-img:hover::after {
+        justify-content: flex-start;
+    }
+    .project-page-img img {
+        filter: blur(3px) brightness(0.5);
+    }
+    .project-description {
+        pointer-events: none;
+        position: absolute;
+        max-width: 100%;
+        max-height: 80%;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        text-align: center;
+        z-index: 3;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    .project-description .project-info {
+        position: absolute;
+        color: white;
+        font-size: 2vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        align-self: center;
+    }
 }

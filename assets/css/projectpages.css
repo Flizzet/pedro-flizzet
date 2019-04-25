@@ -68,7 +68,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: none;
-    filter: brightness(0.2) blur(10px);
+    filter: brightness(0.15) blur(20px);
 }
 
 /* Images */
@@ -84,8 +84,8 @@
     height: 100%;
     max-width: 40%;
     overflow: hidden;
-    border-right: 0px solid var(--lightgray);
-    border-left: 0px solid var(--lightgray);
+    border-right: 0px solid var(--darkblue);
+    border-left: 0px solid var(--darkblue);
     padding: 0px;
     transition: 0.4s;
     transition-timing-function: cubic-bezier(0, 0.9, 0.5, 1.4);

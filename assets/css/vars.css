@@ -1,0 +1,29 @@
+:root {
+    /* Color palette */
+    --darkestblue: #1c2326;
+    --darkblue: #015b7b;
+    --orange: #cd7665;
+    --darkorange: #845147;
+    --lightblue: #5dbbbc;
+    --lightgray: #e8e9e4;
+    --navbarbgcolor: var(--darkestblue);
+    --navbarscrolledbgcolor: var(--lightgray);
+    --accentcolor: var(--orange);
+
+    /* Text */
+    --primarytextcolor: white;
+
+    /* Element styling */
+    --defaultpadding: 20px;
+    --defaultborderradius: 10px;
+
+    /* Separators */
+    --separatorendsize: 1.5vh;
+
+    /* Fonts */
+    --primaryfont: 'Montserrat', sans-serif;
+    --secondaryfont: 'Roboto Slab', serif;
+
+    /* Font Sizes */
+    --mediumfontsize: 4vw;
+}

@@ -1,7 +1,7 @@
 /* Page itself */
 .project-page {
     position: relative;
-    background-color: var(--lightgray);
+    background-color: var(--darkestblue);
     padding: var(--defaultpadding);
 }
 #project-section .project-page:first-child::before,
@@ -61,6 +61,7 @@
     overflow: hidden;
 }
 .project-page .background .background-inner {
+    opacity: 0;
     content: "";
     position: absolute;
     top: 50%;
@@ -153,7 +154,7 @@
     top: 0px;
     right: 0px;
     color: black;
-    max-width: 75%;
+    max-width: 65%;
     height: 100%;
     padding: var(--defaultpadding);
 }

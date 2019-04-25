@@ -8,11 +8,10 @@
 .project-page::after {
     content: "";
     position: absolute;
-    width: 150%;
-    left: 50%;
+    width: 100vw;
+    left: 0px;
     bottom: 0px;
-    height: 1.5vh;
-    transform: translate(-50%, 50%) rotate(0.3deg);
+    height: 2px;
     background-color: var(--orange);
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.7);
     z-index: 3;
@@ -20,11 +19,7 @@
 #project-section .project-page:first-child::before {
     bottom: auto;
     top: 0px;
-    transform: translate(-50%, -50%) rotate(0.3deg);
     background-color: var(--darkblue);
-}
-.project-page.right::after {
-    transform: translate(-50%, 50%) rotate(-0.3deg);
 }
 
 /* Header */
@@ -38,6 +33,7 @@
     right: auto;
     padding: 0px var(--defaultpadding);
     transform: translateY(-55%);
+    color: white;
     text-shadow:
         -1px 0px 0px lightgray,
         -2px 0px 0px darkgray,
@@ -48,6 +44,11 @@
 .right .project-header {
     left: auto;
     right: 0px;
+    text-shadow:
+        1px 0px 0px lightgray,
+        2px 0px 0px darkgray,
+        3px 0px 0px gray,
+        3px 0px 10px rgba(0, 0, 0, 0.6);
 }
 
 /* Background */
@@ -86,8 +87,7 @@
     height: 100%;
     max-width: 40%;
     overflow: hidden;
-    border-right: 0px solid var(--darkblue);
-    border-left: 0px solid var(--darkblue);
+    border: 0px solid var(--orange);
     padding: 0px;
     transition: 0.4s;
     transition-timing-function: cubic-bezier(0, 0.9, 0.5, 1.4);
@@ -95,11 +95,11 @@
 }
 .project-page-img:hover {
     cursor: pointer;
-    border-right: 10px solid var(--darkblue);
+    border-right-width: 10px;
 }
 .right .project-page-img:hover {
-    border-right: 0px solid var(--darkblue);
-    border-left: 10px solid var(--darkblue);
+    border-right-width: 0px;
+    border-left-width: 10px;
 }
 .project-page-img::after {
     opacity: 0;

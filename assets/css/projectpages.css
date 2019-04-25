@@ -165,7 +165,7 @@
 .project-description .project-info {
     width: 75%;
     color: white;
-    font-size: 1.2vw;
+    font-size: .9vw;
     text-align: right;
 }
 .right .project-description .project-info {
@@ -201,6 +201,7 @@
     .project-page-img img {
         filter: blur(3px) brightness(0.5);
     }
+    .right .project-description,
     .project-description {
         pointer-events: none;
         position: absolute;
@@ -215,6 +216,7 @@
         z-index: 3;
         background-color: rgba(0, 0, 0, 0.4);
     }
+    .right .project-description .project-info,
     .project-description .project-info {
         position: absolute;
         color: white;

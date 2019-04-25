@@ -78,4 +78,16 @@
     .intro-text h3 {
         font-size: 4vw;
     }
+    #project-section .projects-section-header h1 {
+        width: 100%;
+        font-size: 8vw;
+        border-right: 0;
+        padding: .8vh var(--defaultpadding);
+        text-shadow:
+        1px 0px 0px lightgray,
+        2px 0px 0px darkgray,
+        3px 0px 0px gray,
+        4px 0px 5px rgba(0, 0, 0, 0.7),
+        4px 0px 10px rgba(0, 0, 0, 0.4);
+    }
 }

@@ -5,6 +5,10 @@
   font-family: var(--primaryfont);
 }
 
+html, body {
+  position: relative;
+  overflow-x: hidden;
+}
 body {
   background-color: var(--darkestblue);
 }

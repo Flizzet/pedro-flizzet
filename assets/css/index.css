@@ -46,7 +46,7 @@
 #project-section .projects-section-header {
     position: relative;
     height: 1.5vh;
-    background-color: var(--darkblue);
+    background-color: var(--orange);
     text-align: right;
     transform: translateY(50%);
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
@@ -60,7 +60,7 @@
     padding: 0px var(--defaultpadding);
     height: auto;
     color: white;
-    border-right: .75vw solid var(--darkblue);
+    border-right: .75vw solid var(--orange);
     text-shadow:
         1px 0px 0px lightgray,
         3px 0px 0px darkgray,

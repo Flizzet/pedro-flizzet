@@ -302,7 +302,7 @@ function setUpScreenshotSliders() {
         sliderContainer.prevImg = function() {
             // Remove active from all images
             for (var i in this.allImgs) {
-                if (this.allImgs[i].hasClass('active')) {
+                if ($(this.allImgs[i]).hasClass('active')) {
                     $(this.allImgs[i]).removeClass('active');
                 }
             }

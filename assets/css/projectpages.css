@@ -9,7 +9,7 @@
     padding: var(--defaultpadding);
     transition: 0.2s;
 }
-.project-page:hover {
+.project-page:not(.active):hover {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.4);
 }
@@ -32,6 +32,14 @@
     background-color: var(--darkblue);
 }
 
+/* Active */
+.project-page.active {
+    transition: 0.5s;
+    max-height: 100vh;
+    height: 100vh;
+    background-color: var(--lightgray);
+}
+
 /* Header */
 .project-header {
     font-family: 'Abril Fatface', serif;
@@ -50,6 +58,18 @@
         -3px 0px 0px gray,
         -3px 0px 10px rgba(0, 0, 0, 0.6);
     z-index: 4;
+    transition: 0.5s;
+}
+.project-page .project-header::after {
+    content: "";
+    position: absolute;;
+    bottom: 0px;
+    left: var(--defaultpadding);
+    width: 0px;
+    border-bottom: 4px solid var(--orange);
+    transition: 0.3s;
+    transition-delay: 1.0s;
+    transition-timing-function: cubic-bezier(0, 0.9, 0.5, 1.2);
 }
 .right .project-header {
     left: auto;
@@ -59,6 +79,18 @@
         2px 0px 0px darkgray,
         3px 0px 0px gray,
         3px 0px 10px rgba(0, 0, 0, 0.6);
+}
+.project-page.active.right .project-header::after {
+    left: auto;
+    right: var(--defaultpadding);
+}
+.project-page.active .project-header {
+    animation: project-page-title-expand 0.4s 0.5s forwards;
+    animation-timing-function: cubic-bezier(0, 0.9, 0.5, 1.1);
+    border-bottom-width: 4px;
+}
+.project-page.active .project-header::after {
+    width: 80%;
 }
 
 /* Background */
@@ -125,11 +157,11 @@
     transition: 0.25s;
     transition-timing-function: cubic-bezier(0, 0.9, 0.5, 1.4);
 }
-.project-page:hover .project-page-img::after {
+.project-page:not(.active):hover .project-page-img::after {
     opacity: 1;
     font-size: 3vw;
 }
-.project-page:hover .project-page-img img {
+.project-page:not(.active):hover .project-page-img img {
     transform: scale(1.02);
 }
 .project-page-img img {
@@ -138,6 +170,17 @@
     min-width: 100%;
     transition: inherit;
     transition-timing-function: cubic-bezier(0, 0.9, 0.5, 1.4);
+}
+.project-page.active .project-page-img {
+    top: 0px;
+    left: 0px;
+    right: auto;
+    max-width: 100%;
+    width: 100%;
+    height: 50%;
+}
+.project-page.active .project-page-img img {
+    transform: scale(1.0);
 }
 
 /* Description */
@@ -163,6 +206,9 @@
     width: 100%;
     color: white;
     font-size: 2vw;
+}
+.project-page.active .project-description {
+    display: none;
 }
 
 /* Portrait styling */

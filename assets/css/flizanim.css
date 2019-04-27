@@ -45,3 +45,15 @@
         transform: scale(1.0);
     }
 }
+
+@keyframes project-page-title-expand {
+    0% {
+        top: 0px;
+    }
+    100% {
+        top: calc(50% + var(--defaultpadding));
+        transform: translateY(0px);
+        color: black;
+        text-shadow: none;
+    }
+}

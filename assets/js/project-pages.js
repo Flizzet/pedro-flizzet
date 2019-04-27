@@ -1,3 +1,5 @@
+var allPages = [];
+
 $(document).ready(function() {
     setUpProjectPages();
 });
@@ -25,6 +27,9 @@ function addProjectPage(project, index) {
     $(page).click(function() {
         pageClicked(page, project);
     });
+
+    // Add new page to page array
+    allPages.push(page)
     
     // Add new page to DOM
     $('#project-section').append(page);
@@ -32,4 +37,15 @@ function addProjectPage(project, index) {
 
 function pageClicked(page, projectObject) {
     console.log("Clicked " + projectObject.title);
+
+    // Remove active class from all project pages
+    for (var i in allPages) {
+        let p = $(allPages[i]);
+        if (p.hasClass('active')) {
+            p.removeClass('active');
+        }
+    }
+
+    // Apply active class
+    $(page).addClass('active');
 }

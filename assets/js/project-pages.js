@@ -105,15 +105,21 @@ function pageClicked(page, projectObject) {
             let minInfoHeight = $('.project-page.active').height() * 0.4;
 
             if (scrollAmt == 0) {
-                // Minimize image height and increase info height if scrolling down
+                // Reset image height and info height if scrolled to the top
                 projectImg.css({
                     'height': maxImgHeight,
                     'filter': 'brightness(1.0) blur(0px)'
                 });
                 projectImg.find('img').css('filter', 'blur(0px)');
                 $(this).css('height', '50%');
+                // Remove box shadow from full-info
+                $('.project-page.active .project-full-info').css({
+                    'box-shadow': 'none'
+                });
+                // Darken mockup
+                $(this).find('.mockup').removeClass('active');
             } else {
-                // Reset image height and info height if scrolled to the top
+                // Minimize image height and increase info height if scrolling down
                 $('.project-page.active .project-header').css({
                     'transform': 'none',
                     'animation': 'project-page-title-reset 0.5s forwards',
@@ -122,7 +128,15 @@ function pageClicked(page, projectObject) {
                     'height': '10%',
                     'filter': 'brightness(0.25)'
                 });
+                // Add shadow to description when scrolling down
+                $(this).css({
+                    'box-shadow': 'inset 0px 6px 5px -5px rgba(0, 0, 0, 1.0)'
+                });
+                // Blur project image
                 projectImg.find('img').css('filter', 'blur(5px)');
+                // Brighten mockup
+                $(this).find('.mockup').addClass('active');
+                // Set new big size on project info
                 $(this).css('height', '90%');
             }
         }

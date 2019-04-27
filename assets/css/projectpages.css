@@ -278,7 +278,7 @@
     color: black;
     text-decoration: none;
 }
-.project-full-info .full-description a::before {
+.project-full-info .full-description .test-link::before {
     content: "\f105";
     font-family: "Font Awesome 5 Free";
     margin-right: 10px;
@@ -289,7 +289,7 @@
     transition: 0.3s;
     transition-timing-function: cubic-bezier(0, 0.9, 0.5, 1.5);
 }
-.project-full-info .full-description a:hover::before {
+.project-full-info .full-description .test-link:hover::before {
     color: var(--orange);
     margin-right: 15px;
 }
@@ -315,6 +315,16 @@
     align-self: flex-top;
     margin-right: auto;
     width: 30%;
+    filter: brightness(0.6);
+    transform: scale(0.75);
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    transition-timing-function: cubic-bezier(0, 0.9, 0.5, 1.4);
+    box-shadow: none;
+}
+.project-full-info .mockup.active {
+    filter: brightness(1.0);
+    transform: scale(1.0);
 }
 
 /* Close button */

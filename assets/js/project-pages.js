@@ -37,7 +37,46 @@ function addProjectPage(project, index) {
     $(fullInfo).html(
         `<p class='full-description'>
             ` + project.description + `
-        </p><img class='mockup' src='assets/` + project.imageFolder + `mockup.png'>`
+        </p><img class='mockup' src='assets/` + project.imageFolder + `mockup.png'>
+        <div class="detail-tabs container">
+            <div class="tab-slider--nav">
+                <ul class="tab-slider--tabs">
+                    <li class="tab-slider--trigger active" rel="development">
+                        <p>Development</p>
+                    </li>
+                    <li class="tab-slider--trigger" rel="design">
+                        <p>Design</p>
+                    </li>
+                    <li class="tab-slider--trigger" rel="distribution">
+                        <p>Distribution</p>
+                    </li>
+                    <li class="tab-slider--trigger" rel="platforms">
+                        <p>Platforms</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tab-slider--container">
+                <div id="development" class="tab-slider--body">
+                    <h2>Development</h2>
+                    <p>Toggle switch style tab navigation. Currently only works with two tabs.</p>
+                    <p>Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue.</p>
+                </div>
+                <div id="design" class="tab-slider--body">
+                    <h2>Design</h2>
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                </div>
+                <div id="distribution" class="tab-slider--body">
+                    <h2>Distribution</h2>
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                </div>
+                <div id="platforms" class="tab-slider--body">
+                    <h2>Platforms</h2>
+                    <p>Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue.</p>
+                </div>
+            </div>
+        </div>
+        <div class="full-page"></div>`
     );
 
     // Add elements
@@ -60,6 +99,31 @@ function addProjectPage(project, index) {
     
     // Add new page to DOM
     $('#project-section').append(page);
+
+
+    // Enable new tabs and their required listeners
+    $(".tab-slider--body").hide();
+    $(".tab-slider--body:first").show();
+
+    $(".tab-slider--nav li").click(function() {
+        console.log("click");
+        $(".tab-slider--body").fadeOut(200);
+
+        // Assign the active tab and fade in its content
+        var activeTab = $(this).attr("rel");
+        setTimeout(function() {
+            $("#" + activeTab).fadeIn(200);
+        }, 250);
+
+        // Remove active from old tab
+        $(".tab-slider--nav li").removeClass("active");
+
+        // Add active to new tab
+        $(this).addClass("active");
+    });
+    
+    // Fade in first tab
+    $("#" + $(".tab-slider--nav li").attr("rel")).fadeIn();
 }
 
 function pageClicked(page, projectObject) {

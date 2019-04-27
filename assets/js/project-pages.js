@@ -3,6 +3,8 @@ var lastScroll = 0;
 
 $(document).ready(function() {
     setUpProjectPages();
+
+    $.scrollTo(100);
 });
 
 function setUpProjectPages() {
@@ -55,8 +57,6 @@ function addProjectPage(project, index) {
 }
 
 function pageClicked(page, projectObject) {
-    console.log("Clicked " + projectObject.title);
-
     for (var i in allPages) {
         // Remove active class from all project pages
         let p = $(allPages[i]);
@@ -127,12 +127,16 @@ function pageClicked(page, projectObject) {
         }
     )
 
-    // Remove overflow from body
+    // Remove overflow from all required scrolling elements
     let scrollDisableElements = [
         $('body'), $('#main'), $('html')
     ]
     for (var i in scrollDisableElements) {
         scrollDisableElements[i].css('overflow', 'hidden');
     }
-    page.scrollIntoView();
+
+    // Scroll to the newly expanded page
+    $(window).scrollTo(page, 1000, {
+        easing: 'easeInOutQuint'
+    });
 }

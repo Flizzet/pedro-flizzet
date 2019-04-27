@@ -66,3 +66,12 @@
         top: 0px;
     }
 }
+
+@keyframes project-page-close-button-bar-expand {
+    0% {
+        width: 10vw;
+    }
+    100% {
+        width: 50vw;
+    }
+}

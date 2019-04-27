@@ -1,5 +1,9 @@
 var allPages = [];
 var lastScroll = 0;
+var projectPageOpen = false;
+var scrollDisableElements = [
+    $('body'), $('#main'), $('html')
+]
 
 $(document).ready(function() {
     setUpProjectPages();
@@ -43,11 +47,14 @@ function addProjectPage(project, index) {
     $(page).append("<div class='project-page-img'><img src='assets/" + project.imageFolder + "bannerimg.png'></div>")
     $(page).append("<div class='project-description'><p class='project-info'>" + project.shortDesc + "</p></div>");
     $(page).append(fullInfo);
-    $(page).append("<div class='close-button'><span class='close-text'><h4>Close project</h4></span><i class='fas fa-times'></i></div>")
+    $(page).append("<div class='close-button' onclick='closeAllProjectPages()'><span class='close-text'><h4>Close project</h4></span><i class='fas fa-times'></i></div>")
 
     // Add click to page
     $(page).click(function() {
-        pageClicked(page, project);
+        console.log ($(page).hasClass('active'));
+        if (!projectPageOpen) {
+            pageClicked(page, project);
+        }
     });
 
     // Add new page to page array
@@ -58,6 +65,8 @@ function addProjectPage(project, index) {
 }
 
 function pageClicked(page, projectObject) {
+    projectPageOpen = true;
+
     for (var i in allPages) {
         // Remove active class from all project pages
         let p = $(allPages[i]);
@@ -70,6 +79,9 @@ function pageClicked(page, projectObject) {
             'opacity', '1.0'
         );
 
+        // Show all headers
+        $(p).find('.project-header').css('opacity', 1);
+
         // Hide other project headers so they don't show in expanded page
         if (i != allPages.indexOf(page)) {
             $(p).find('.project-header').css('opacity', '0');
@@ -77,7 +89,6 @@ function pageClicked(page, projectObject) {
 
         // Hide project section header if the first project is clicked
         if (page == allPages[0]) {
-            console.log("found");
             $('#project-section .projects-section-header').css(
                 'opacity', '0'
             )
@@ -129,9 +140,6 @@ function pageClicked(page, projectObject) {
     )
 
     // Remove overflow from all required scrolling elements
-    let scrollDisableElements = [
-        $('body'), $('#main'), $('html')
-    ]
     for (var i in scrollDisableElements) {
         scrollDisableElements[i].css('overflow', 'hidden');
     }
@@ -140,4 +148,38 @@ function pageClicked(page, projectObject) {
     $(window).scrollTo(page, 1000, {
         easing: 'easeInOutQuint'
     });
+}
+
+function closeAllProjectPages() {
+    console.log("closed all");
+    setTimeout(function() {
+        for (var i in allPages) {
+            // Remove active class from all project pages
+            let p = $(allPages[i]);
+            if (p.hasClass('active')) {
+                p.removeClass('active');
+            }
+
+            // Reset/show project section header
+            $('#project-section .project-section-header').css(
+                'opacity', '1.0'
+            );
+
+            // Show all headers
+            $(p).find('.project-header').css('opacity', 1);
+        }
+
+        projectPageOpen = false;
+
+        for (var i in scrollDisableElements) {
+            let e = scrollDisableElements[i];
+
+            if (e.css('overflow') == 'hidden') {
+                e.css({
+                    'overflow-y': 'scroll',
+                    'overflow-x': 'hidden'
+                })
+            }
+        }
+    }, 100);
 }

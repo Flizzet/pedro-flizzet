@@ -266,6 +266,47 @@
     border-radius: 5px;
     background-color: gray;
 }
+.project-full-info .full-description a {
+    position: relative;
+    color: var(--darkorange);
+    transition: 0.3s;
+}
+.project-full-info .full-description a:hover {
+    margin-right: 10px;
+    color: var(--orange);
+    text-decoration: none;
+}
+.project-full-info .full-description a::before {
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 900;
+    font-style: normal;
+    transition: 0.3s;
+    transition-timing-function: cubic-bezier(0, 0.9, 0.5, 1.5);
+}
+.project-full-info .full-description a:hover::before {
+    color: var(--orange);
+    margin-right: 15px;
+}
+.project-full-info .full-description a::after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 100%;
+    border-bottom: 2px solid var(--orange);
+    top: 0px;
+    left: 0px;
+    transition: 0.5s;
+    transition-timing-function: cubic-bezier(0, 0.9, 0.5, 1.2);
+    transform: translateY(30%);
+}
+.project-full-info .full-description a:hover::after {
+    width: 100%;
+}
+
 
 /* Mockup */
 .project-full-info .mockup {

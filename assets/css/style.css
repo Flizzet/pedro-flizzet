@@ -12,6 +12,9 @@ html, body {
 body {
   background-color: var(--darkestblue);
 }
+button:focus {
+  outline:0;
+}
 
 .quarter-page {
   position: relative;

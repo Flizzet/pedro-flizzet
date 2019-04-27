@@ -75,7 +75,7 @@ function pageClicked(page, projectObject) {
         }
 
         // Reset/show project section header
-        $('#project-section .project-section-header').css(
+        $('#project-section .projects-section-header').css(
             'opacity', '1.0'
         );
 
@@ -161,7 +161,7 @@ function closeAllProjectPages() {
             }
 
             // Reset/show project section header
-            $('#project-section .project-section-header').css(
+            $('#project-section .projects-section-header').css(
                 'opacity', '1.0'
             );
 

@@ -43,6 +43,7 @@ function addProjectPage(project, index) {
     $(page).append("<div class='project-page-img'><img src='assets/" + project.imageFolder + "bannerimg.png'></div>")
     $(page).append("<div class='project-description'><p class='project-info'>" + project.shortDesc + "</p></div>");
     $(page).append(fullInfo);
+    $(page).append("<div class='close-button'><span class='close-text'><h4>Close project</h4></span><i class='fas fa-times'></i></div>")
 
     // Add click to page
     $(page).click(function() {

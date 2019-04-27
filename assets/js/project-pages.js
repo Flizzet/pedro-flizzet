@@ -184,14 +184,10 @@ function pageClicked(page, projectObject) {
                 // Reset image height and info height if scrolled to the top
                 projectImg.css({
                     'height': maxImgHeight,
-                    'filter': 'brightness(1.0) blur(0px)'
                 });
-                projectImg.find('img').css('filter', 'blur(0px)');
                 $(this).css('height', '50%');
-                // Remove box shadow from full-info
-                $('.project-page.active .project-full-info').css({
-                    'box-shadow': 'none'
-                });
+                // Rebrighten image by increasing opacity
+                projectImg.find('img').css('opacity', 1.0);
                 // Darken mockup
                 $(this).find('.mockup').removeClass('active');
             } else {
@@ -202,14 +198,9 @@ function pageClicked(page, projectObject) {
                 });
                 projectImg.css({
                     'height': '10%',
-                    'filter': 'brightness(0.25)'
                 });
-                // Add shadow to description when scrolling down
-                $(this).css({
-                    'box-shadow': 'inset 0px 6px 5px -5px rgba(0, 0, 0, 1.0)'
-                });
-                // Blur project image
-                projectImg.find('img').css('filter', 'blur(5px)');
+                // Dark image by decrease opacity
+                projectImg.find('img').css('opacity', 0.4);
                 // Brighten mockup
                 $(this).find('.mockup').addClass('active');
                 // Set new big size on project info

@@ -8,7 +8,6 @@
     background-color: var(--darkestblue);
     padding: var(--defaultpadding);
     transition: 0.2s;
-    overflow-x: hidden;
 }
 .project-page:not(.active):hover {
     cursor: pointer;
@@ -39,7 +38,7 @@
     max-height: 100vh;
     height: 100vh;
     background-color: var(--lightgray);
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 /* Header */
@@ -59,7 +58,7 @@
         -2px 0px 0px darkgray,
         -3px 0px 0px gray,
         -3px 0px 10px rgba(0, 0, 0, 0.6);
-    z-index: 4;
+    z-index: 990;
     transition: 0.5s;
 }
 .project-page .project-header::after {
@@ -180,7 +179,6 @@
     flex-shrink: 0;
     min-height: 100%;
     min-width: 100%;
-    transition: inherit;
     transition-timing-function: ease-out;
 }
 .project-page.active .project-page-img {
@@ -195,7 +193,7 @@
 }
 .project-page.active .project-page-img img {
     transform: scale(1.0);
-    transition: 0s;
+    transition: 0.5s;
 }
 
 /* Description */

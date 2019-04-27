@@ -41,19 +41,19 @@ function addProjectPage(project, index) {
         <div class="detail-tabs container">
             <div class="tab-slider--nav">
                 <ul class="tab-slider--tabs">
-                    <li class="tab-slider--trigger active" rel="development">
+                    <li class="tab-slider--trigger active" rel="development` + project.codename + `">
                         <p>Development</p>
                         <i class="fas fa-code tab-subicon"></i>
                     </li>
-                    <li class="tab-slider--trigger" rel="design">
+                    <li class="tab-slider--trigger" rel="design` + project.codename + `">
                         <p>Design</p>
                         <i class="fas fa-paint-brush tab-subicon"></i>
                     </li>
-                    <li class="tab-slider--trigger" rel="distribution">
+                    <li class="tab-slider--trigger" rel="distribution` + project.codename + `">
                         <p>Distribution</p>
                         <i class="fas fa-road tab-subicon"></i>
                     </li>
-                    <li class="tab-slider--trigger" rel="platforms">
+                    <li class="tab-slider--trigger" rel="platforms` + project.codename + `">
                         <p>Platforms</p>
                         <i class="fas fa-tablet-alt tab-subicon"></i>
                     </li>
@@ -61,22 +61,29 @@ function addProjectPage(project, index) {
             </div>
 
             <div class="tab-slider--container">
-                <div id="development" class="tab-slider--body">
+                <div id="development` + project.codename + `" class="tab-slider--body">
                     <h2>Development</h2>
-                    <p>Toggle switch style tab navigation. Currently only works with two tabs.</p>
-                    <p>Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue.</p>
+                    <p>`
+                        + project.developmentDetail +
+                    `</p>
                 </div>
-                <div id="design" class="tab-slider--body">
+                <div id="design` + project.codename + `" class="tab-slider--body">
                     <h2>Design</h2>
-                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                    <p>`
+                        + project.designDetail +
+                    `</p>
                 </div>
-                <div id="distribution" class="tab-slider--body">
+                <div id="distribution` + project.codename + `" class="tab-slider--body">
                     <h2>Distribution</h2>
-                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                    <p>`
+                        + project.distributionDetail +
+                    `</p>
                 </div>
-                <div id="platforms" class="tab-slider--body">
+                <div id="platforms` + project.codename + `" class="tab-slider--body">
                     <h2>Platforms</h2>
-                    <p>Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue.</p>
+                    <p>`
+                        + project.platformsDetail +
+                    `</p>
                 </div>
             </div>
         </div>
@@ -92,7 +99,6 @@ function addProjectPage(project, index) {
 
     // Add click to page
     $(page).click(function() {
-        console.log ($(page).hasClass('active'));
         if (!projectPageOpen) {
             pageClicked(page, project);
         }
@@ -104,13 +110,11 @@ function addProjectPage(project, index) {
     // Add new page to DOM
     $('#project-section').append(page);
 
-
     // Enable new tabs and their required listeners
     $(".tab-slider--body").hide();
     $(".tab-slider--body:first").show();
 
     $(".tab-slider--nav li").click(function() {
-        console.log("click");
         $(".tab-slider--body").fadeOut(200);
 
         // Assign the active tab and fade in its content
@@ -159,6 +163,10 @@ function pageClicked(page, projectObject) {
                 'opacity', '0'
             )
         }
+
+        // Fade in first detail tab
+        // $("#" + $(".tab-slider--nav li").attr("rel")).fadeIn();
+        $("#" + ($(page).find('.tab-slider--nav li').attr("rel"))).fadeIn();
     }
 
     // Apply active class to page
@@ -222,7 +230,6 @@ function pageClicked(page, projectObject) {
 }
 
 function closeAllProjectPages() {
-    console.log("closed all");
     setTimeout(function() {
         for (var i in allPages) {
             // Remove active class from all project pages

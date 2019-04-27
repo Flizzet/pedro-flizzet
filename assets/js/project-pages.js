@@ -43,15 +43,19 @@ function addProjectPage(project, index) {
                 <ul class="tab-slider--tabs">
                     <li class="tab-slider--trigger active" rel="development">
                         <p>Development</p>
+                        <i class="fas fa-code tab-subicon"></i>
                     </li>
                     <li class="tab-slider--trigger" rel="design">
                         <p>Design</p>
+                        <i class="fas fa-paint-brush tab-subicon"></i>
                     </li>
                     <li class="tab-slider--trigger" rel="distribution">
                         <p>Distribution</p>
+                        <i class="fas fa-road tab-subicon"></i>
                     </li>
                     <li class="tab-slider--trigger" rel="platforms">
                         <p>Platforms</p>
+                        <i class="fas fa-tablet-alt tab-subicon"></i>
                     </li>
                 </ul>
             </div>

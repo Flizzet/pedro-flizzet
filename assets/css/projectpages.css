@@ -314,7 +314,8 @@
 
 /* Mockup */
 .project-full-info .mockup {
-    width: 30%;
+    width: 25%;
+    padding-left: 5%;
     filter: brightness(0.6);
     transform: scale(0.75);
     transition: 0.5s;

@@ -28,7 +28,7 @@ function addProjectPage(project, index) {
     $(page).append(backgroundHolder);
     $(page).append("<div class='project-header'>" + project.title + "</div>");
     $(page).append("<div class='project-page-img'><img src='assets/" + project.imageFolder + "bannerimg.png'></div>")
-    $(page).append("<div class='project-description'><p class='project-info'>" + project.description + "</p></div>");
+    $(page).append("<div class='project-description'><p class='project-info'>" + project.shortDesc + "</p></div>");
 
     $('#project-section').append(page);
 }

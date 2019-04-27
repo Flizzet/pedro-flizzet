@@ -82,13 +82,11 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    top: 0px;
-    left: 0px;
-    min-height: 100%;
-    height: 100%;
+    top: var(--defaultpadding);
+    left: var(--defaultpadding);
+    bottom: var(--defaultpadding);
     max-width: 40%;
     overflow: hidden;
-    border: 0px solid var(--orange);
     padding: 0px;
     transition: 0.4s;
     transition-timing-function: cubic-bezier(0, 0.9, 0.5, 1.4);
@@ -96,11 +94,6 @@
 }
 .project-page-img:hover {
     cursor: pointer;
-    border-right-width: 10px;
-}
-.right .project-page-img:hover {
-    border-right-width: 0px;
-    border-left-width: 10px;
 }
 .project-page-img::after {
     opacity: 0;
@@ -124,10 +117,6 @@
 .project-page-img:hover::after {
     opacity: 1;
     font-size: 3vw;
-    box-shadow: inset -25px 0px 15px rgba(0, 0, 0, 0.4);
-}
-.right .project-page-img:hover::after {
-    box-shadow: inset 25px 0px 15px rgba(0, 0, 0, 0.4);
 }
 .project-page-img:hover img {
     transform: scale(1.05);
@@ -164,13 +153,9 @@
     justify-content: flex-start;
 }
 .project-description .project-info {
-    width: 75%;
+    width: 100%;
     color: white;
-    font-size: .9vw;
-    text-align: right;
-}
-.right .project-description .project-info {
-    text-align: left;
+    font-size: 2vw;
 }
 
 /* Portrait styling */
@@ -180,7 +165,12 @@
     }
     .project-page-img {
         max-width: 100%;
-        max-height: 20%;
+        max-height: 100%;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        border: 0;
     }
     .right .project-page-img:hover,
     .project-page-img:hover {

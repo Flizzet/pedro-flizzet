@@ -3,7 +3,7 @@
         width: 0%;
     }
     100% {
-        width: 65%;
+        width: 20%;
     }
 }
 @keyframes fade-in {
@@ -36,13 +36,13 @@
 }
 @keyframes intro-text-pop {
     0% {
-        transform: scale(1.0);
+        transform: translateY(-50%) scale(1.0);
     }
     10% {
-        transform: scale(1.1);
+        transform: translateY(-50%) scale(1.1);
     }
     100% {
-        transform: scale(1.0);
+        transform: translateY(-50%) scale(1.0);
     }
 }
 

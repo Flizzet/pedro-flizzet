@@ -44,7 +44,7 @@
 /* Header */
 .project-header {
     font-family: 'Abril Fatface', serif;
-    font-size: 3vw;
+    font-size: 2.8vw;
     text-transform: uppercase;
     position: absolute;
     top: 0px;
@@ -89,7 +89,9 @@
     animation: project-page-title-expand 0.4s 0.5s forwards;
     animation-timing-function: cubic-bezier(0, 0.9, 0.5, 1.1);
     border-bottom-width: 4px;
-    transition: 0.5s;
+    font-size: 2vw;
+    transition: 0.3s;
+    transition-delay: 1.0s;
 }
 .project-page.active .project-header::after {
     width: 80%;
@@ -317,6 +319,7 @@
     top: 0px;
 }
 .project-page.active .close-button:hover {
+    color: rgba(150, 50, 50, 1.0);
     cursor: pointer;
 }
 .project-page.active .close-button i {
@@ -329,8 +332,17 @@
     z-index: 999;
 }
 .project-page.active .close-button:hover i {
+    color: rgba(150, 50, 50, 1.0);
+    text-shadow: 
+        1px 1px 0px rgba(150, 50, 50, 1.0),
+        2px 2px 0px rgba(120, 50, 50, 1.0),
+        3px 3px 0px rgba(100, 40, 40, 1.0),
+        4px 4px 0px rgba(80, 30, 30, 1.0),
+        4px 4px 10px rgba(0, 0, 0, 0.5);
+
     margin-right: 4px;
     transition: 0.3s;
+    -webkit-text-stroke: 4px white;
 }
 .project-page .close-button .close-text {
     pointer-events: none;

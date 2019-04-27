@@ -8,7 +8,6 @@
     background-color: var(--darkestblue);
     padding: var(--defaultpadding);
     transition: 0.2s;
-    overflow: hidden;
 }
 .project-page:not(.active):hover {
     cursor: pointer;
@@ -39,6 +38,7 @@
     max-height: 100vh;
     height: 100vh;
     background-color: var(--lightgray);
+    overflow: hidden;
 }
 
 /* Header */

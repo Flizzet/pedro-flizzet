@@ -57,16 +57,18 @@ function addProjectPage(project, index) {
 function pageClicked(page, projectObject) {
     console.log("Clicked " + projectObject.title);
 
-    // Remove active class from all project pages and hide/show projects header as necessary
     for (var i in allPages) {
+        // Remove active class from all project pages
         let p = $(allPages[i]);
         if (p.hasClass('active')) {
             p.removeClass('active');
         }
+        // Reset/show project section header
         $('#project-section .project-section-header').css(
             'opacity', '1.0'
         );
 
+        // Hide project section header if the first project is clicked
         if (page == allPages[0]) {
             console.log("found");
             $('#project-section .projects-section-header').css(
@@ -87,15 +89,20 @@ function pageClicked(page, projectObject) {
             let minInfoHeight = $('.project-page.active').height() * 0.4;
 
             if (scrollAmt == 0) {
+                // Minimize image height and increase info height if scrolling down
                 projectImg.css({
                     'height': maxImgHeight,
-                    'filter': 'brightness(1.0)'
+                    'filter': 'brightness(1.0) blur(0px)'
                 });
+                projectImg.find('img').css(
+                    'filter', 'blur(0px)'
+                )
                 $(this).css('height', minInfoHeight);
                 $(this).css(
                     'height', '50%'
                 )
             } else {
+                // Reset image height and info height if scrolled to the top
                 $('.project-page.active .project-header').css({
                     'transform': 'none',
                     'animation': 'project-page-title-reset 0.5s forwards',
@@ -104,23 +111,22 @@ function pageClicked(page, projectObject) {
                     'height': '10%',
                     'filter': 'brightness(0.25)'
                 });
+                projectImg.find('img').css(
+                    'filter', 'blur(5px)'
+                )
                 $(this).css(
                     'height', '90%'
                 )
             }
-            if (scrollAmt < lastScroll) {
-                return;
-            }
-            
-            lastScroll = scrollAmt;
-
-            console.log("s: " + scrollAmt);
         }
     )
 
     // Remove overflow from body
-    $('body').css('overflow', 'hidden');
-    $('#main').css('overflow', 'hidden');
-    $('html').css('overflow', 'hidden');
+    let scrollDisableElements = [
+        $('body'), $('#main'), $('html')
+    ]
+    for (var i in scrollDisableElements) {
+        scrollDisableElements[i].css('overflow', 'hidden');
+    }
     page.scrollIntoView();
 }

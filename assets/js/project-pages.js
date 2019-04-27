@@ -7,8 +7,6 @@ var scrollDisableElements = [
 
 $(document).ready(function() {
     setUpProjectPages();
-
-    $.scrollTo(100);
 });
 
 function setUpProjectPages() {
@@ -21,7 +19,7 @@ function setUpProjectPages() {
 
     for (var i in allPages) {
         if (i == 0) {
-            // pageClicked(allPages[i], AllProjects[i]);
+            pageClicked(allPages[i], AllProjects[i]);
         }
     }
 }
@@ -112,13 +110,8 @@ function pageClicked(page, projectObject) {
                     'height': maxImgHeight,
                     'filter': 'brightness(1.0) blur(0px)'
                 });
-                projectImg.find('img').css(
-                    'filter', 'blur(0px)'
-                )
-                $(this).css('height', minInfoHeight);
-                $(this).css(
-                    'height', '50%'
-                )
+                projectImg.find('img').css('filter', 'blur(0px)');
+                $(this).css('height', '50%');
             } else {
                 // Reset image height and info height if scrolled to the top
                 $('.project-page.active .project-header').css({
@@ -129,12 +122,8 @@ function pageClicked(page, projectObject) {
                     'height': '10%',
                     'filter': 'brightness(0.25)'
                 });
-                projectImg.find('img').css(
-                    'filter', 'blur(5px)'
-                )
-                $(this).css(
-                    'height', '90%'
-                )
+                projectImg.find('img').css('filter', 'blur(5px)');
+                $(this).css('height', '90%');
             }
         }
     )

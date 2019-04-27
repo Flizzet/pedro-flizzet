@@ -75,3 +75,18 @@
         width: 50vw;
     }
 }
+
+@keyframes close-text-bounce {
+    0% {
+        margin-right: 0px;
+    }
+    35% {
+        margin-right: 15px;
+    }
+    65% {
+        margin-right: 15px;
+    }
+    100% {
+        margin-right: 0px;
+    }
+}

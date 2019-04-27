@@ -7,28 +7,29 @@ function setUpProjectPages() {
     for (var i in AllProjects) {
         let project = AllProjects[i];
 
-        console.log(project.title);
-
         addProjectPage(project, i);
     }
 }
 
 function addProjectPage(project, index) {
+    // Create page div
     var page = document.createElement("div");
     var pageClasses = index % 2 == 0 ? 'project-page half-page' : 'project-page half-page right';
     page.setAttribute('class', pageClasses);
-
-    var backgroundHolder = document.createElement("div");
-    backgroundHolder.setAttribute('class', 'background');
-    var backgroundHolderInner = document.createElement("span")
-    backgroundHolderInner.setAttribute('class', 'background-inner');
-    backgroundHolderInner.setAttribute('style', 'background-image: url("assets/' + project.imageFolder + 'background.png")');
-    backgroundHolder.append(backgroundHolderInner);
-    
-    $(page).append(backgroundHolder);
+    // Add elements
     $(page).append("<div class='project-header'>" + project.title + "</div>");
     $(page).append("<div class='project-page-img'><img src='assets/" + project.imageFolder + "bannerimg.png'></div>")
     $(page).append("<div class='project-description'><p class='project-info'>" + project.shortDesc + "</p></div>");
 
+    // Add click to page
+    $(page).click(function() {
+        pageClicked(page, project);
+    });
+    
+    // Add new page to DOM
     $('#project-section').append(page);
+}
+
+function pageClicked(page, projectObject) {
+    console.log("Clicked " + projectObject.title);
 }

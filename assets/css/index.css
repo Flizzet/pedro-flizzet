@@ -46,6 +46,8 @@
 #project-section .projects-section-header {
     position: relative;
     height: 1.5vh;
+    width: 90%;
+    right: 0px;
     background-color: var(--orange);
     text-align: right;
     transform: translateY(50%);
@@ -78,6 +80,9 @@
     }
     .intro-text h3 {
         font-size: 4vw;
+    }
+    #project-section .projects-section-header {
+        width: 100%;
     }
     #project-section .projects-section-header h1 {
         width: 100%;

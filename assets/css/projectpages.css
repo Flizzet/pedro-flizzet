@@ -330,7 +330,8 @@
     transform: translateY(-50%) rotate(-10deg);
     transition-timing-function: cubic-bezier(0, 0.8, 1.1, 1.4);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
-    animation: project-page-close-button-bar-expand 60s 0.5s forwards ease-in-out;
+    animation: project-page-close-button-bar-expand 1s 1.5s forwards ease-in-out;
+    animation-timing-function: cubic-bezier(0, 0.5, 0.2, 1.2);
 }
 .project-page.active .close-button:hover::after {
     opacity: 0.3;

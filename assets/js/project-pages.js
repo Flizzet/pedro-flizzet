@@ -213,6 +213,7 @@ function pageClicked(page, projectObject) {
     for (var i in scrollDisableElements) {
         scrollDisableElements[i].css('overflow', 'hidden');
     }
+    $(page).css('overflow', 'hidden');
 
     // Scroll to the newly expanded page
     $(window).scrollTo(page, 1000, {

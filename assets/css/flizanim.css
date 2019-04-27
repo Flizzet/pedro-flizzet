@@ -57,3 +57,12 @@
         text-shadow: none;
     }
 }
+
+@keyframes project-page-title-reset {
+    0% {
+        top: calc(50% + var(--defaultpadding));
+    }
+    100% {
+        top: 0px;
+    }
+}

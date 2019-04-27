@@ -8,6 +8,7 @@
     background-color: var(--darkestblue);
     padding: var(--defaultpadding);
     transition: 0.2s;
+    overflow: hidden;
 }
 .project-page:not(.active):hover {
     cursor: pointer;
@@ -88,6 +89,7 @@
     animation: project-page-title-expand 0.4s 0.5s forwards;
     animation-timing-function: cubic-bezier(0, 0.9, 0.5, 1.1);
     border-bottom-width: 4px;
+    transition: 0.5s;
 }
 .project-page.active .project-header::after {
     width: 80%;
@@ -178,6 +180,9 @@
     max-width: 100%;
     width: 100%;
     height: 50%;
+    min-height: 10%;
+    max-height: 50%;
+    transition: 0.5s;
 }
 .project-page.active .project-page-img img {
     transform: scale(1.0);
@@ -209,6 +214,53 @@
 }
 .project-page.active .project-description {
     display: none;
+}
+
+/* Full info */
+.project-full-info {
+    position: absolute;
+    display: none;
+    min-height: 40%;
+    max-height: 90%;
+    height: 40%;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    padding: var(--defaultpadding);
+    overflow-y: scroll;
+    transition: 0.5s;
+}
+.project-page.active .project-full-info {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Full description */
+.project-full-info .full-description {
+    font-size: 1.5vw;
+    margin-right: var(--defaultpadding);
+    color: black;
+    margin-left: auto;
+}
+.project-full-info::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+.project-full-info::-webkit-scrollbar-track {
+    background-color: lightgray;
+}
+ 
+.project-full-info::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);  */
+    background-color: gray;
+}
+
+/* Mockup */
+.project-full-info .mockup {
+    align-self: flex-top;
+    margin-right: auto;
+    width: 30%;
 }
 
 /* Portrait styling */

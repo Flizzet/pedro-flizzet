@@ -81,6 +81,7 @@
     transform: translateY(50%);
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
     z-index: 3;
+    transition: 0.3s;
 }
 #project-section .projects-section-header h1 {
     font-family: var(--sectionheaderfont);

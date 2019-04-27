@@ -7,6 +7,7 @@ var scrollDisableElements = [
 
 $(document).ready(function() {
     setUpProjectPages();
+    setUpScreenshotSliders();
 });
 
 function setUpProjectPages() {
@@ -31,6 +32,12 @@ function addProjectPage(project, index) {
 
     // Add classes to page
     page.setAttribute('class', pageClasses);
+    // Create screenshots string
+    var allScreenshots = "";
+    for (var i = 1; i < project.totalScreenshots; i++) {
+        let imageSlide = "<li>\n<div class='slides'>\n<img src='assets/" + project.imageFolder + "screenshots/" + i + ".png'>\n</div>\n</li>\n";
+        allScreenshots = allScreenshots + imageSlide;
+    }
     // Create full project info element
     var fullInfo = document.createElement("div");
     fullInfo.setAttribute('class', 'project-full-info');
@@ -87,8 +94,24 @@ function addProjectPage(project, index) {
                 </div>
             </div>
         </div>
+        <div class="slider-container portrait">
+            <div class="slider">
+                <ul>`
+                    + allScreenshots +
+                `</ul>
+                <button class="slider-prev-button">
+                    <i class="fas fa-angle-left"></i>
+                </button>
+                <button class="slider-next-button">
+                    <i class="fas fa-angle-right"></i>
+                </button>
+            </div>
+        </div>
+
         <div class="full-page"></div>`
     );
+
+    // $(fullInfo).children().first().find('img').addClass('active');
 
     // Add elements
     $(page).append("<div class='project-header'>" + project.title + "</div>");
@@ -165,7 +188,6 @@ function pageClicked(page, projectObject) {
         }
 
         // Fade in first detail tab
-        // $("#" + $(".tab-slider--nav li").attr("rel")).fadeIn();
         $("#" + ($(page).find('.tab-slider--nav li').attr("rel"))).fadeIn();
     }
 
@@ -252,4 +274,57 @@ function closeAllProjectPages() {
             }
         }
     }, 100);
+}
+
+function setUpScreenshotSliders() {
+    $('.slider-container').each(function(i) {
+        var sliderContainer = $(this);
+
+        sliderContainer.currentImgIndex = -1;
+        sliderContainer.allImgs = sliderContainer.find('img');
+        sliderContainer.nextImg = function() {
+            // Remove active from all images
+            for (var i in this.allImgs) {
+                if ($(this.allImgs[i]).hasClass('active')) {
+                    $(this.allImgs[i]).removeClass('active');
+                }
+            }
+            // Iterate current image
+            if (this.currentImgIndex < this.allImgs.length - 1) {
+                this.currentImgIndex ++;
+            } else {
+                this.currentImgIndex = 0;
+            }
+            console.log(this.currentImgIndex);
+            // Add active to current image
+            $(this.allImgs[this.currentImgIndex]).addClass('active');
+        };
+        sliderContainer.prevImg = function() {
+            // Remove active from all images
+            for (var i in this.allImgs) {
+                if (this.allImgs[i].hasClass('active')) {
+                    $(this.allImgs[i]).removeClass('active');
+                }
+            }
+            // Iterate current image
+            if (this.currentImgIndex > 0) {
+                this.currentImgIndex --;
+            } else {
+                this.currentImgIndex = this.allImgs.length - 1;
+            }
+            // Add active to current image
+            $(this.allImgs[this.currentImgIndex]).addClass('active');
+        };
+        
+        // Find the buttons and add their onclick
+        sliderContainer.find('.slider-prev-button').click(function() {
+            console.log("clicked");
+            sliderContainer.prevImg();
+        });
+        sliderContainer.find('.slider-next-button').click(function() {
+            sliderContainer.nextImg();
+        });
+
+        sliderContainer.nextImg();
+    })
 }

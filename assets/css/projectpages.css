@@ -471,6 +471,12 @@
     transform: translateX(-50%);
 }
 
+/* Screenshot slider */
+.project-page.active .slider-container {
+    max-width: 480px;
+    width: 480px;
+}
+
 /* Portrait styling */
 @media (orientation: portrait) {
     .project-header {

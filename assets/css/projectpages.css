@@ -533,4 +533,9 @@
         text-align: center;
         align-self: center;
     }
+    .detail-tabs {
+        width: 100vw;
+        height: 50vh;
+        padding: 0px;
+    }
 }

@@ -63,10 +63,16 @@ function pageClicked(page, projectObject) {
         if (p.hasClass('active')) {
             p.removeClass('active');
         }
+
         // Reset/show project section header
         $('#project-section .project-section-header').css(
             'opacity', '1.0'
         );
+
+        // Hide other project headers so they don't show in expanded page
+        if (i != allPages.indexOf(page)) {
+            $(p).find('.project-header').css('opacity', '0');
+        }
 
         // Hide project section header if the first project is clicked
         if (page == allPages[0]) {

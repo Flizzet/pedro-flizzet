@@ -553,6 +553,9 @@
 .screenshotslider .lslide.active img {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
+.lSSlideOuter .lightSlider {
+    height: auto !important;
+}
 .lSSlideOuter .lSPager.lSGallery {
     position: relative;
     display: flex;

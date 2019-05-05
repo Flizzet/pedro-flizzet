@@ -7,9 +7,6 @@ var scrollDisableElements = [
 
 $(document).ready(function() {
     setUpProjectPages();
-    // setTimeout(function() {
-    //     setUpScreenshots();
-    // }, 1000);
 });
 
 function setUpProjectPages() {
@@ -152,6 +149,10 @@ function addProjectPage(project, index) {
 function pageClicked(page, projectObject) {
     projectPageOpen = true;
 
+    // Set up screenshots
+    setUpScreenshots();
+
+    // Assign all page CSS
     for (var i in allPages) {
         // Remove active class from all project pages
         let p = $(allPages[i]);

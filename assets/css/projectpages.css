@@ -508,7 +508,7 @@
     width: 80%;
     height: 60%;
     transform: translate(-50%, -50%) rotate(-3deg);
-    border: 3px solid white;
+    border: 3px solid var(--orange);
 }
 .screenshotslider {
     position: relative;
@@ -532,7 +532,7 @@
     width: 0px;
     height: 0px;
     transform: translateX(-50%);
-    border-top: 3px solid white;
+    border-top: 3px solid var(--orange);
     border-radius: 0px;
     transition: 0.25s;
     transition-delay: 0.5s; 

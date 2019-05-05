@@ -7,6 +7,9 @@ var scrollDisableElements = [
 
 $(document).ready(function() {
     setUpProjectPages();
+    // setTimeout(function() {
+    //     setUpScreenshots();
+    // }, 1000);
 });
 
 function setUpProjectPages() {
@@ -93,24 +96,14 @@ function addProjectPage(project, index) {
                 </div>
             </div>
         </div>
-        ` +
-        // <div class="slider-container portrait">
-        //     <div class="slider">
-        //         <ul>`
-        //             + allScreenshots +
-        //         `</ul>
-        //         <button class="slider-prev-button">
-        //             <i class="fas fa-angle-left"></i>
-        //         </button>
-        //         <button class="slider-next-button">
-        //             <i class="fas fa-angle-right"></i>
-        //         </button>
-        //     </div>
-        // </div>
-        `<div class="full-page"></div>`
+        <div class="container screenshot-container">
+            <div class="screenshot-background"></div>
+            <ul class="screenshotslider">
+                ` + getProjectScreenshots(project) + `
+            </ul>
+        </div>
+        <div class="full-page"></div>`
     );
-
-    // $(fullInfo).children().first().find('img').addClass('active');
 
     // Add elements
     $(page).append("<div class='project-header'>" + project.title + "</div>");

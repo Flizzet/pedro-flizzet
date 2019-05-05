@@ -7,7 +7,6 @@ var scrollDisableElements = [
 
 $(document).ready(function() {
     setUpProjectPages();
-    setUpScreenshotSliders();
 });
 
 function setUpProjectPages() {
@@ -94,21 +93,21 @@ function addProjectPage(project, index) {
                 </div>
             </div>
         </div>
-        <div class="slider-container portrait">
-            <div class="slider">
-                <ul>`
-                    + allScreenshots +
-                `</ul>
-                <button class="slider-prev-button">
-                    <i class="fas fa-angle-left"></i>
-                </button>
-                <button class="slider-next-button">
-                    <i class="fas fa-angle-right"></i>
-                </button>
-            </div>
-        </div>
-
-        <div class="full-page"></div>`
+        ` +
+        // <div class="slider-container portrait">
+        //     <div class="slider">
+        //         <ul>`
+        //             + allScreenshots +
+        //         `</ul>
+        //         <button class="slider-prev-button">
+        //             <i class="fas fa-angle-left"></i>
+        //         </button>
+        //         <button class="slider-next-button">
+        //             <i class="fas fa-angle-right"></i>
+        //         </button>
+        //     </div>
+        // </div>
+        `<div class="full-page"></div>`
     );
 
     // $(fullInfo).children().first().find('img').addClass('active');
@@ -277,57 +276,4 @@ function closeAllProjectPages() {
             }
         }
     }, 100);
-}
-
-function setUpScreenshotSliders() {
-    $('.slider-container').each(function(i) {
-        var sliderContainer = $(this);
-
-        sliderContainer.currentImgIndex = -1;
-        sliderContainer.allImgs = sliderContainer.find('img');
-        sliderContainer.nextImg = function() {
-            // Remove active from all images
-            for (var i in this.allImgs) {
-                if ($(this.allImgs[i]).hasClass('active')) {
-                    $(this.allImgs[i]).removeClass('active');
-                }
-            }
-            // Iterate current image
-            if (this.currentImgIndex < this.allImgs.length - 1) {
-                this.currentImgIndex ++;
-            } else {
-                this.currentImgIndex = 0;
-            }
-            console.log(this.currentImgIndex);
-            // Add active to current image
-            $(this.allImgs[this.currentImgIndex]).addClass('active');
-        };
-        sliderContainer.prevImg = function() {
-            // Remove active from all images
-            for (var i in this.allImgs) {
-                if ($(this.allImgs[i]).hasClass('active')) {
-                    $(this.allImgs[i]).removeClass('active');
-                }
-            }
-            // Iterate current image
-            if (this.currentImgIndex > 0) {
-                this.currentImgIndex --;
-            } else {
-                this.currentImgIndex = this.allImgs.length - 1;
-            }
-            // Add active to current image
-            $(this.allImgs[this.currentImgIndex]).addClass('active');
-        };
-        
-        // Find the buttons and add their onclick
-        sliderContainer.find('.slider-prev-button').click(function() {
-            console.log("clicked");
-            sliderContainer.prevImg();
-        });
-        sliderContainer.find('.slider-next-button').click(function() {
-            sliderContainer.nextImg();
-        });
-
-        sliderContainer.nextImg();
-    })
 }

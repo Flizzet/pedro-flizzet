@@ -93,11 +93,14 @@ function addProjectPage(project, index) {
                 </div>
             </div>
         </div>
-        <div class="container screenshot-container">
-            <div class="screenshot-background"></div>
-            <ul class="screenshotslider" id="` + project.codename + `screenshots">
-                ` + getProjectScreenshots(project) + `
-            </ul>
+        <div class="screenshot-container">
+            <h1 class="screenshots-header">Screenshots</h1>
+            <div class="container">
+                <div class="screenshot-background"></div>
+                <ul class="screenshotslider" id="` + project.codename + `screenshots">
+                    ` + getProjectScreenshots(project) + `
+                </ul>
+            </div>
         </div>
         <div class="full-page"></div>`
     );
@@ -238,12 +241,18 @@ function pageClicked(page, projectObject) {
 
 function closeAllProjectPages() {
     destroyCurrentSlider();
-    
+
     setTimeout(function() {
         for (var i in allPages) {
             // Remove active class from all project pages
             let p = $(allPages[i]);
             if (p.hasClass('active')) {
+                p.find('.project-page-img').css({
+                    'height': '100%'
+                })
+                p.find('.project-page-img img').css({
+                    'opacity': '1.0'
+                })
                 p.removeClass('active');
             }
 

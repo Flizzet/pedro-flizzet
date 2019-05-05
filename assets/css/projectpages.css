@@ -456,6 +456,7 @@
 .detail-tabs {
     position: relative;
     margin: 40px auto;
+    margin-bottom: 10px;
     height: 30vh;
     width: 85%;
     padding: 0px;
@@ -479,8 +480,9 @@
     position: relative;
     overflow: visible;
     margin-bottom: 150px;
+    overflow: visible !important;
+    width: 100%;
 }
-
 .screenshot-container::after {
     content: "";
     position: absolute;
@@ -492,6 +494,33 @@
     transform: translate(-50%, 50%);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.9);
     border-radius: 50%;
+}
+.screenshots-header {
+    font-family: var(--heavyfont);
+    font-size: 3vw;
+    text-transform: uppercase;
+    position: absolute;
+    color: white;
+    top: -20px;
+    right: 0px;
+    padding-right: var(--defaultpadding);
+    z-index: 999;
+    transform: translateY(-50%);
+    text-shadow:
+        0px 1px 0px lightgray,
+        0px 2px 0px darkgray,
+        0px 3px 0px gray,
+        0px 3px 10px rgba(0, 0, 0, 0.6);
+}
+.screenshots-header::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    width: 100%;
+    height: 120%;
+    transform: translateY(-50%);
+    border-right: 5px solid var(--orange);
 }
 .screenshot-background {
     position: absolute;

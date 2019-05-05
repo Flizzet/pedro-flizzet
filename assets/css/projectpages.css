@@ -8,6 +8,8 @@
     background-color: var(--darkestblue);
     padding: var(--defaultpadding);
     transition: 0.2s;
+    overflow-x: visible;
+    overflow-y: visible;
 }
 .project-page:not(.active):hover {
     cursor: pointer;

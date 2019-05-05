@@ -256,6 +256,9 @@ function closeAllProjectPages() {
             $('#project-section .projects-section-header').css(
                 'opacity', '1.0'
             );
+            
+            // Re-enable overflow
+            $(p).css('overflow', 'visible');
 
             // Show all headers
             $(p).find('.project-header').css('opacity', 1);

@@ -12,6 +12,9 @@ html, body {
 body {
   background-color: var(--darkestblue);
 }
+#main {
+  overflow: hidden;
+}
 button:focus {
   outline:0;
 }

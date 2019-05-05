@@ -189,6 +189,13 @@ function pageClicked(page, projectObject) {
 
     // Apply active class to page
     $(page).addClass('active');
+    let maxImgHeight = window.innerHeight / 2;
+
+    // Reset image height and info height if scrolled to the top
+    $(page).find('.project-page-img').css({
+        'height': maxImgHeight,
+    });
+    $(page).find('.project-full-info').css('height', '45%');
 
     // Apply scrolling effect to page
     $('.project-page.active .project-full-info').scroll(
@@ -196,7 +203,6 @@ function pageClicked(page, projectObject) {
             let scrollAmt = $(this).scrollTop();
             let projectImg = $('.project-page.active .project-page-img');
             let maxImgHeight = $('.project-page.active').height() / 2;
-            let minInfoHeight = $('.project-page.active').height() * 0.4;
 
             if (scrollAmt == 0) {
                 // Reset image height and info height if scrolled to the top

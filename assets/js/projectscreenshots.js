@@ -14,8 +14,9 @@ function getProjectScreenshots(project) {
     return allScreenshots;
 }
 
-function setUpScreenshots() {
-    var slider = $(".screenshotslider").lightSlider({
+function setUpScreenshots(project) {
+    let sliderId = project.codename + "screenshots"
+    currentSlider = $("#" + sliderId).lightSlider({
         gallery: true,
         speed: 400,
         enableSwipe: false,
@@ -24,4 +25,10 @@ function setUpScreenshots() {
         centerSlide: true,
         currentPagerPosition: 'middle'
     });
+}
+
+function destroyCurrentSlider() {
+    if (currentSlider) {
+        currentSlider.destroy();
+    }
 }

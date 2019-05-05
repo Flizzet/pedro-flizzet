@@ -95,7 +95,7 @@ function addProjectPage(project, index) {
         </div>
         <div class="container screenshot-container">
             <div class="screenshot-background"></div>
-            <ul class="screenshotslider">
+            <ul class="screenshotslider" id="` + project.codename + `screenshots">
                 ` + getProjectScreenshots(project) + `
             </ul>
         </div>
@@ -150,7 +150,7 @@ function pageClicked(page, projectObject) {
     projectPageOpen = true;
 
     // Set up screenshots
-    setUpScreenshots();
+    setUpScreenshots(projectObject);
 
     // Assign all page CSS
     for (var i in allPages) {
@@ -237,6 +237,8 @@ function pageClicked(page, projectObject) {
 }
 
 function closeAllProjectPages() {
+    destroyCurrentSlider();
+    
     setTimeout(function() {
         for (var i in allPages) {
             // Remove active class from all project pages

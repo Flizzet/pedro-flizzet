@@ -19,8 +19,8 @@ function setUpScreenshots(project) {
     currentSlider = $("#" + sliderId).lightSlider({
         gallery: true,
         speed: 400,
-        enableSwipe: false,
-        enableDrag: false,
+        // enableSwipe: false,
+        // enableDrag: false,
         item: 1,
         centerSlide: true,
         currentPagerPosition: 'middle'

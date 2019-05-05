@@ -84,8 +84,8 @@
         3px 0px 10px rgba(0, 0, 0, 0.6);
 }
 .project-page.active.right .project-header::after {
-    left: auto;
-    right: var(--defaultpadding);
+    /* left: auto; */
+    /* right: var(--defaultpadding); */
 }
 .project-page.active .project-header {
     animation: project-page-title-expand 0.4s 0.5s forwards;
@@ -94,6 +94,8 @@
     font-size: 2vw;
     transition: 0.3s;
     transition-delay: 1.0s;
+    right: auto;
+    left: 0px;
 }
 .project-page.active .project-header::after {
     width: 80%;

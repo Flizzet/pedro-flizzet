@@ -24,3 +24,41 @@ AllProjects = [
         platformsDetail: 'The game was developed for mobile (iOS & Android). Since it\'s built in HTML5, it\'s runnable in any web environment that supports Canvas. The game adapts to all screen sizes.'
     }
 ]
+
+Temporary = [
+    {
+        codename: '',
+        title: '',
+        shortDesc: '',
+        description: '',
+        imageFolder: '',
+        totalScreenshots: 0,
+        developmentDetail: '',
+        designDetail: '',
+        distributionDetail: '',
+        platformsDetail: ''
+    }
+]
+MainProjects = [
+    'ascentium 179',
+    'singapore quiz',
+    'via',
+    'to the moon',
+    'instablast',
+    'flizzetsite',
+    'siege',
+    'pixel pete',
+    'foodtruck',
+    'jetpackboy',
+    'languinis',
+    'ammoinferno',
+    'almostahero'
+]
+ExtraProjects = [
+    'melon catch', 'qeexo ipad pumpkin',
+    'pepsicoin diagram', 'cvs christmas campaign', 'complex yeezy campaign', 
+    'adamant - jousting, archery, lockpick'
+]
+SmallDesignProjects = [
+    'royalty hookah lounge', 'geisa dutra concert flyer'
+]

@@ -481,7 +481,7 @@
 .screenshot-container {
     position: relative;
     overflow: visible;
-    margin-bottom: 150px;
+    margin-bottom: 15px;
     overflow: visible !important;
     width: 100%;
 }
@@ -602,6 +602,7 @@
     overflow: visible !important;
     filter: brightness(0.6);
 }
+.lSSlideOuter .lSPager.lSGallery li.active,
 .lSSlideOuter .lSPager.lSGallery li:hover {
     transform: translateY(-10px);
     filter: brightness(1.0);

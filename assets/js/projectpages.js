@@ -94,15 +94,14 @@ function addProjectPage(project, index) {
             </div>
         </div>
         <div class="screenshot-container">
-            <h1 class="screenshots-header">Screenshots</h1>
+        <h1 class="screenshots-header">Screenshots</h1>
             <div class="container">
                 <div class="screenshot-background"></div>
                 <ul class="screenshotslider" id="` + project.codename + `screenshots">
                     ` + getProjectScreenshots(project) + `
                 </ul>
             </div>
-        </div>
-        <div class="full-page"></div>`
+        </div>`
     );
 
     // Add elements

@@ -490,7 +490,7 @@
     position: absolute;
     left: 50%;
     bottom: 0px;
-    width: 105%;
+    width: 95%;
     height: 0px;
     border-bottom: 5px solid var(--accentcolor);
     transform: translate(-50%, 50%);

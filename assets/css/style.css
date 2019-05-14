@@ -7,13 +7,29 @@
 
 html, body {
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 body {
-  background-color: var(--darkestblue);
+  background-color: var(--lightgray);
 }
 #main {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: var(--darkestblue);
+  width: calc(100vw - 80px);
+  height: calc(100vh - 80px);
+  margin: 40px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.7);
+  border-left: 3px solid var(--orange);
+}
+#main::-webkit-scrollbar {
+    width: 12px;
+}
+#main::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+#main::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 button:focus {
   outline:0;
@@ -41,6 +57,7 @@ button:focus {
 }
 
 .current-page-indicator {
+  color: black;
   text-transform: uppercase;
   width: 100vh;
   position: fixed;
@@ -52,4 +69,7 @@ button:focus {
   transform: rotate(-90deg);
   padding-left: 15px;
   z-index: 999;
+}
+.current-page-indicator span {
+  color: inherit;
 }

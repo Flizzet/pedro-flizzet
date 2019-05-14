@@ -7,7 +7,7 @@
 
 html, body {
   position: relative;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 body {
   background-color: var(--lightgray);
@@ -20,17 +20,21 @@ body {
   height: calc(100vh - 80px);
   margin: 40px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.7);
-  border-left: 3px solid var(--orange);
 }
 #main::-webkit-scrollbar {
-    width: 12px;
+    width: 10px;
 }
 #main::-webkit-scrollbar-track {
-    background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 #main::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--orange);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
+#main::-webkit-scrollbar-thumb:hover {
+}
+
 button:focus {
   outline:0;
 }

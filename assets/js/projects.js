@@ -52,7 +52,8 @@ MainProjects = [
     'jetpackboy',
     'languinis',
     'ammoinferno',
-    'almostahero'
+    'almostahero',
+    'timbercove'
 ]
 ExtraProjects = [
     'melon catch', 'qeexo ipad pumpkin',

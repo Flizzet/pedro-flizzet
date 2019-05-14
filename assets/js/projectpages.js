@@ -2,7 +2,7 @@ var allPages = [];
 var lastScroll = 0;
 var projectPageOpen = false;
 var scrollDisableElements = [
-    $('body'), $('#main'), $('html')
+    $('#main')
 ]
 
 $(document).ready(function() {
@@ -109,15 +109,21 @@ function pageClicked(page, projectObject) {
     )
 
     // Remove overflow from all required scrolling elements
-    for (var i in scrollDisableElements) {
-        scrollDisableElements[i].css('overflow', 'hidden');
-    }
+    // for (var i in scrollDisableElements) {
+    //     scrollDisableElements[i].css({
+    //         'overflow': 'hidden',
+    //         'overflow-y': 'hidden !important'
+    //     });
+    // }
     $(page).css('overflow', 'hidden');
 
     // Scroll to the newly expanded page
-    $(window).scrollTo(page, 1000, {
+    $('#main').scrollTo(page, 1000, {
         easing: 'easeInOutQuint'
     });
+    $('#main').css({
+        'overflow-y': 'hidden'
+    })
 }
 
 function closeAllProjectPages() {
@@ -151,15 +157,6 @@ function closeAllProjectPages() {
 
         projectPageOpen = false;
 
-        for (var i in scrollDisableElements) {
-            let e = scrollDisableElements[i];
-
-            if (e.css('overflow') == 'hidden') {
-                e.css({
-                    'overflow-y': 'scroll',
-                    'overflow-x': 'hidden'
-                })
-            }
-        }
+        $('#main').css('overflow-y', 'visible');
     }, 100);
 }

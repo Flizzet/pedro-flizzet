@@ -83,10 +83,6 @@
         3px 0px 0px gray,
         3px 0px 10px rgba(0, 0, 0, 0.6);
 }
-.project-page.active.right .project-header::after {
-    /* left: auto; */
-    /* right: var(--defaultpadding); */
-}
 .project-page.active .project-header {
     animation: project-page-title-expand 0.4s 0.5s forwards;
     animation-timing-function: cubic-bezier(0, 0.9, 0.5, 1.1);
@@ -212,6 +208,7 @@
     top: 0px;
     right: 0px;
     color: black;
+    width: 50%;
     max-width: 50%;
     height: 100%;
     padding: var(--defaultpadding);
@@ -224,7 +221,8 @@
 .project-description .project-info {
     width: 100%;
     color: white;
-    font-size: 2vw;
+    font-size: 20px;
+    text-align: center;
 }
 .project-page.active .project-description {
     display: none;
@@ -665,7 +663,7 @@
     .project-description .project-info {
         position: absolute;
         color: white;
-        font-size: 2vw;
+        font-size: 4vw;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);

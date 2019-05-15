@@ -316,6 +316,7 @@
 }
 #start-page .intro-header h1 .lastname,
 #start-page .intro-header h1 {
+    font-family: 'Staatliches', sans-serif;
     color: rgba(50, 50, 50, 1.0);
     font-weight: 700;
     font-size: 13vh;
@@ -323,8 +324,11 @@
 #start-page .intro-header h1 .period {
     font-family: var(--sectionheaderfont);
     color: var(--lightgray);
+    padding-left: 10px;
 }
 #start-page .intro-header h3 {
+    font-family: 'Fjalla One', sans-serif;
+    text-transform: uppercase;
     font-size: 5vh;
     color: var(--lightgray);
     text-align: right;

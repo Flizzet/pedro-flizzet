@@ -1,3 +1,8 @@
-$( "#start-page .uncover-container .lock" ).click(function() {
-    $(this).toggleClass('unlocked');
+$(document).ready(function() {
+
+    $('.scroll-down-indicator').on('click', function() {
+        console.log("Click");
+        $('#start-page').addClass('closed');
+    })
+
 });

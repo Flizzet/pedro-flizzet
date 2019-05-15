@@ -27,7 +27,7 @@
     --intro-anim-speed: 3s;
     --intro-anim-delay: 1.75s;
     position: fixed;
-    display: none;
+    /* display: none; */
     top: 50%;
     left: 50%;
     right: 0px;
@@ -46,9 +46,9 @@
     top: 0px;
     width: 50%;
     height: 100%;
-    background-color: var(--orange);
+    background-color: var(--lightgray);
     z-index: 81;
-    border: 0px solid var(--darkorange);
+    border: 0px solid var(--darkgray);
     animation: open-intro var(--intro-anim-speed) forwards var(--intro-anim-delay);
     filter: brightness(0.75);
 }
@@ -57,8 +57,9 @@
 }
 #start-page .uncover-container::after {
     right: 0px;
-    border-color: var(--orange);
-    background-color: var(--darkorange);
+    /* border-color: var(--orange); */
+    background-color: rgba(200, 200, 200, 1);
+    /* background-color: var(--darkorange); */
 }
 #start-page .uncover-container .glare {
     position: absolute;

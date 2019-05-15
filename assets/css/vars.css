@@ -1,8 +1,10 @@
 :root {
     /* Color palette */
     --darkestblue: #1c2326;
+    --lightdarkestblue: #38464c;
     --darkblue: #015b7b;
     --orange: #e2652b;
+    --darkishorange: #c95b28;
     --darkorange: #845147;
     --lightblue: #5dbbbc;
     --lightgray: #e8e9e4;

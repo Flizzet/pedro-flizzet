@@ -13,6 +13,7 @@ body {
   background-color: var(--lightgray);
 }
 #main {
+  display: none;
   overflow-x: hidden;
   overflow-y: scroll;
   background-color: var(--darkestblue);

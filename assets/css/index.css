@@ -494,6 +494,7 @@
     }
     100% {
         transform: translate(-50%, -50%) rotate(9deg);
+        pointer-events: none;
     }
 }
 

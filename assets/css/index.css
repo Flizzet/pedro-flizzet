@@ -161,7 +161,8 @@
     height: 65vh;
     transform: translate(-50%, -50%);
     filter: brightness(0.7);
-    background-color: var(--lightgray);
+    background-color: rgba(232, 233, 228, 0.2);
+    /* var(--lightgray); */
     border-left: 8px solid var(--orange);
 }
 #start-page .main-page {
@@ -172,6 +173,8 @@
     height: calc(100vh - calc(var(--defaultpadding) * 4));
     transform: translate(-50%, -50%);
     overflow: hidden;
+    border-right: 15px solid var(--darkishorange);
+    box-shadow: 10px 0px 0px #af4f23;
 }
 #start-page .main-page::before {
     content: "";
@@ -190,7 +193,7 @@
     width: 100%;
     height: 90%;
     transform: translateY(-50%);
-    background-color: var(--lightgray);
+    background-color: rgba(232, 233, 228, 0.4);
     border-top: 20px solid var(--darkishorange);
     box-shadow: 22px 22px 0px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -223,10 +226,46 @@
 }
 #start-page .main-page .left-half .scroll-down-indicator i,
 #start-page .main-page .left-half .scroll-down-indicator h3 {
-    color: black;
+    color: white;
     font-size: 3.5vh;
     transition: 0.5s;
     transition-timing-function: cubic-bezier(0, 0.9, 0.5, 1.7);
+}
+#start-page .main-page .left-half .scroll-down-indicator i {
+    color: var(--orange);
+}
+#start-page .main-page .left-half .intro-socials {
+    position: absolute;
+    top: var(--defaultpadding);
+    left: var(--defaultpadding);
+    width: auto;
+    z-index: 90;
+}
+#start-page .main-page .left-half .intro-socials i {
+    color: white;
+    font-size: 8vh;
+    transition: 0.2s;
+}
+#start-page .main-page .left-half .intro-socials i:hover {
+    transform: translateY(-2px);
+}
+#start-page .main-page .left-half .intro-socials i::after {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    bottom: 0px;
+    left: 50%;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 1.0);
+    transform: translate(-50%, 0px);
+    z-index: -1;
+    transition: 0.2s;
+    border-radius: 5px;
+}
+#start-page .main-page .left-half .intro-socials i:hover::after {
+    opacity: 0.15;
+    transform: translate(-50%, 4px);
 }
 #start-page .main-page .right-half {
     position: absolute;
@@ -235,6 +274,7 @@
     width: 100vw;
     height: 150vh;
     background-color: var(--orange);
+    /* opacity: 0.8; */
     transform: translateY(-50%) rotate(9deg);
     box-shadow: -20px 0px 0px rgba(0, 0, 0, 0.2);
     overflow: hidden;

@@ -60,7 +60,7 @@
         -2px 0px 0px darkgray,
         -3px 0px 0px gray,
         -3px 0px 10px rgba(0, 0, 0, 0.6);
-    z-index: 990;
+    z-index: 4;
     transition: 0.5s;
 }
 .project-page .project-header::after {

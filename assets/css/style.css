@@ -32,8 +32,6 @@ body {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-#main::-webkit-scrollbar-thumb:hover {
-}
 
 button:focus {
   outline:0;
@@ -72,7 +70,7 @@ button:focus {
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
   padding-left: 15px;
-  z-index: 999;
+  z-index: 20;
 }
 .current-page-indicator span {
   color: inherit;

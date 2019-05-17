@@ -197,7 +197,7 @@
     border-top: 20px solid var(--darkishorange);
     box-shadow: 22px 22px 0px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    transition: 0.08s;
+    transition: margin-left 0.8s;
     transition-timing-function: ease-out;
 }
 #start-page .main-page .left-half::after {
@@ -219,6 +219,7 @@
     bottom: var(--defaultpadding);
     transform-origin: bottom left;
     transform: rotate(90deg) translateX(-100%);
+    transition: margin-left 0.12s;
 }
 #start-page .main-page .left-half .scroll-down-indicator:hover {
     cursor: pointer;
@@ -242,6 +243,7 @@
     left: var(--defaultpadding);
     width: auto;
     z-index: 90;
+    transition: margin-left 0.1s;
 }
 #start-page .main-page .left-half .intro-socials i {
     color: white;

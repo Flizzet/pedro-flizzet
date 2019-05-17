@@ -1,4 +1,5 @@
 var introClosed = false;
+var stretchStrength = 0.02;
 
 $(document).ready(function() {
 
@@ -38,9 +39,16 @@ function stretchLeftHalf(mouseData) {
     var leftHalf = $('#start-page .main-page .left-half');
     // Get difference between mouse and leftHalf
     var mouseDistance = mouseData.pageX - leftHalf.offset().left;
-    var stretchStrength = 0.02;
     var stretchAmt = mouseDistance * stretchStrength;
     
     // Apply newly found stretch to left half
-    leftHalf.css('margin-left', stretchAmt);
+    leftHalf.css({
+        'margin-left': stretchAmt,
+    });
+    leftHalf.find($('.scroll-down-indicator')).css({
+        'margin-left': stretchAmt * 1.15
+    })
+    leftHalf.find($('.intro-socials')).css({
+        'margin-left': stretchAmt * 0.4
+    })
 }

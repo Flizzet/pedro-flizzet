@@ -197,6 +197,8 @@
     border-top: 20px solid var(--darkishorange);
     box-shadow: 22px 22px 0px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    transition: 0.08s;
+    transition-timing-function: ease-out;
 }
 #start-page .main-page .left-half::after {
     content: "";
@@ -290,6 +292,7 @@
     transform: rotate(-80deg);
 }
 #start-page .intro-header {
+    pointer-events: none;
     color: black;
     position: absolute;
     top: 50%;

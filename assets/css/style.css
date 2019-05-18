@@ -15,10 +15,10 @@ body {
 #main {
   position: absolute;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: scroll !important;
   background-color: var(--darkestblue);
   width: calc(100vw - 80px);
-  height: calc(100vh - 80px);
+  height: calc(100vh - 100px);
   bottom: 40px;
   left: 40px;
   box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.2);

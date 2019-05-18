@@ -66,15 +66,10 @@ function stretchRightHalf(mouseData) {
     var newShadowXOffset = baseShadowXOffset * (stretchAmt * 0.04) - 40;
     var newBoxShadow = newShadowXOffset + "px 0px 0px rgba(0, 0, 0, 0.2)";
 
-    // Find new rotation value for right half
-    var baseRotation = 9;
-    var newRotation = baseRotation + (stretchAmt * 0.1);
-
     // Apply newly found stretch and box shadow to right half
     rightHalf.css({
         'margin-left': stretchAmt * 1.3,
-        'box-shadow': newBoxShadow,
-        'transform': 'translateY(-50%) rotate(' + newRotation + 'deg)'
+        'box-shadow': newBoxShadow
     })
 
 }

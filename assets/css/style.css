@@ -15,7 +15,7 @@ body {
 #main {
   position: absolute;
   overflow-x: hidden;
-  overflow-y: scroll !important;
+  overflow-y: scroll;
   background-color: var(--darkestblue);
   width: calc(100vw - 80px);
   height: calc(100vh - 100px);

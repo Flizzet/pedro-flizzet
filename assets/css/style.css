@@ -19,16 +19,13 @@ body {
   background-color: var(--darkestblue);
   width: calc(100vw - 80px);
   height: calc(100vh - 80px);
-  top: 40px;
+  bottom: 40px;
   left: 40px;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.7);
+  box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.2);
   transform: translateX(-100vw);
 }
-/* #main.open {
-  transform: translateX(0px);
-} */
 #main::-webkit-scrollbar {
-    width: 10px;
+    display: none;
 }
 #main::-webkit-scrollbar-track {
   background-color: rgba(0, 0, 0, 0.7);
@@ -64,20 +61,54 @@ button:focus {
   height: 100vh;
 }
 
-.current-page-indicator {
+.nav-button {
+  position: fixed;
+  top: 15px;
+  right: 40px;
+  width: 30px;
+  height: 30px;
+}
+.nav-button .nav-button-piece {
+  position: absolute;
+  right: 0px;
+  width: 80%;
+  border: 2px solid var(--orange);
+  transform: translateY(-50%);
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);;
+}
+.nav-button .center-piece {
+  top: 50%;
+  width: 100%;
+}
+.nav-button .bottom-piece {
+  bottom: 0px;
+}
+.nav-button .top-piece {
+  top: 0px;
+  transform: translateY(50%);
+}
+.nav-button:hover {
+  cursor: pointer;
+}
+.nav-button:hover .nav-button-piece {
+  width: 100%;
+}
+.nav-button:hover .center-piece {
+  width: 90%;
+}
+
+.fixed-header {
+  font-family: 'Staatliches', sans-serif;
+  padding: 0px;
+  margin: 0px;
+  position: fixed;
+  top: 20px;
+  left: 40px;
+}
+.fixed-header h1 {
+  font-size: 2.5vh;
+  padding: 0px;
+  margin: 0px;
   color: black;
   text-transform: uppercase;
-  width: 100vh;
-  position: fixed;
-  bottom: 0%;
-  left: 100%;
-  -webkit-transform-origin: 0% 100%;
-  transform-origin: 0% 100%;
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-  padding-left: 15px;
-  z-index: 20;
-}
-.current-page-indicator span {
-  color: inherit;
 }

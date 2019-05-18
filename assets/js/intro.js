@@ -28,6 +28,8 @@ $(document).ready(function() {
         }
     });
 
+    closeIntro();
+
 });
 
 function closeIntro() {

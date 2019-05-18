@@ -278,6 +278,7 @@
     width: 100vw;
     height: 150vh;
     background-color: var(--orange);
+    transform-origin: 50% 50%; 
     transform: translateY(-50%) rotate(9deg);
     box-shadow: -20px 0px 0px rgba(0, 0, 0, 0.2);
     overflow: hidden;

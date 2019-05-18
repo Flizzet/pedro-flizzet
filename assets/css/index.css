@@ -281,6 +281,8 @@
     transform: translateY(-50%) rotate(9deg);
     box-shadow: -20px 0px 0px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    transition: 0.3s;
+    transition-timing-function: ease-out;
 }
 #start-page .main-page .right-half::before {
     content: "";

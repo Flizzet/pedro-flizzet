@@ -1,5 +1,6 @@
 var introClosed = false;
 var stretchStrength = 0.02;
+var introScrollAmt = 0;
 
 $(document).ready(function() {
 
@@ -11,6 +12,21 @@ $(document).ready(function() {
 
     // Closing intro & opening main page on scrolldown or button click
     $('.scroll-down-indicator').on('click', closeIntro);
+
+    // Listen for scrolling, increment scrolling down to close functionality
+    document.addEventListener("wheel", function (e) {
+        if (e.deltaY > 0) {
+            introScrollAmt += (e.deltaY / 15);
+            var newHeightPercentage = 70 - introScrollAmt;
+            if (newHeightPercentage <= 0) {
+                $('#start-page .intro-header .border-piece').css('height', 0 + "px");    
+                closeIntro();
+            } else {
+                $('#start-page .intro-header .border-piece').css('height', newHeightPercentage + "%");
+                $('#start-page .intro-header h1 .period').css('padding-left', (introScrollAmt * 2) + 10 + "px");
+            }
+        }
+    });
 
 });
 

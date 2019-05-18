@@ -306,8 +306,7 @@
     text-align: left;
     padding: 0px var(--defaultpadding); 
 }
-#start-page .intro-header::before {
-    content: "";
+#start-page .intro-header .border-piece {
     position: absolute;
     bottom: 0px;
     right: -30px;
@@ -318,7 +317,7 @@
     box-shadow:
         2px 2px 0px var(--darkishorange),
         4px 4px 0px rgba(50, 50, 50, 1.0);
-    /* transform: translateY(-50%); */
+    transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 #start-page .intro-header h1 {
     font-family: 'Staatliches', sans-serif;
@@ -336,6 +335,7 @@
     font-family: var(--sectionheaderfont);
     color: var(--lightgray);
     padding-left: 10px;
+    transition: 0.15s cubic-bezier(0.19, 1, 0.22, 1);
 }
 #start-page .intro-header h3 {
     font-family: 'Fjalla One', sans-serif;

@@ -174,7 +174,7 @@
     transform: translate(-50%, -50%);
     overflow: hidden;
     border-right: 15px solid var(--darkishorange);
-    box-shadow: 10px 0px 0px #af4f23;
+    box-shadow: 5px 0px 0px white;
 }
 #start-page .main-page::before {
     content: "";
@@ -184,7 +184,7 @@
     height: 100%;
     width: 80%;
     border-bottom: 20px solid var(--orange);
-    border-left: 20px solid var(--orange);
+    border-left: 20px dashed var(--orange);
 }
 #start-page .main-page .left-half {
     position: absolute;
@@ -195,7 +195,7 @@
     transform: translateY(-50%);
     background-color: rgba(232, 233, 228, 0.4);
     border-top: 20px solid var(--darkishorange);
-    box-shadow: 22px 22px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     transition: margin-left 0.8s;
     transition-timing-function: ease-out;
@@ -301,27 +301,36 @@
     color: black;
     position: absolute;
     top: 50%;
-    right: var(--defaultpadding);
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: left;
-    padding: var(--defaultpadding);
+    padding: 0px var(--defaultpadding); 
 }
 #start-page .intro-header::before {
     content: "";
     position: absolute;
-    top: 0px;
-    left: 50%;
-    width: 100%;
-    transform: translateX(-50%);
-    border-top: 15px solid var(--lightgray);
+    bottom: 0px;
+    right: -30px;
+    width: 0px;
+    height: 70%;
+    border-right: 10px solid var(--lightgray);
     border-color: white;
+    box-shadow:
+        2px 2px 0px var(--darkishorange),
+        4px 4px 0px rgba(50, 50, 50, 1.0);
+    /* transform: translateY(-50%); */
 }
-#start-page .intro-header h1 .lastname,
 #start-page .intro-header h1 {
     font-family: 'Staatliches', sans-serif;
-    color: rgba(50, 50, 50, 1.0);
-    font-weight: 700;
+    color: var(--lightgray);
+    /* color: rgba(50, 50, 50, 1.0); */
+    font-weight: 500;
     font-size: 13vh;
+    text-shadow: 
+        4px 4px 0px var(--darkishorange),
+        8px 8px 0px rgba(50, 50, 50, 1.0);
+    padding: 0px;
+    margin: 0px;
 }
 #start-page .intro-header h1 .period {
     font-family: var(--sectionheaderfont);
@@ -331,8 +340,8 @@
 #start-page .intro-header h3 {
     font-family: 'Fjalla One', sans-serif;
     text-transform: uppercase;
-    font-size: 5vh;
-    color: var(--lightgray);
+    font-size: 4vh;
+    color: rgba(50, 50, 50, 1.0);
     text-align: right;
 }
 

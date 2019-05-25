@@ -107,14 +107,7 @@ function pageClicked(page, projectObject) {
             }
         }
     )
-
-    // Remove overflow from all required scrolling elements
-    // for (var i in scrollDisableElements) {
-    //     scrollDisableElements[i].css({
-    //         'overflow': 'hidden',
-    //         'overflow-y': 'hidden !important'
-    //     });
-    // }
+    
     $(page).css('overflow', 'hidden');
 
     // Scroll to the newly expanded page

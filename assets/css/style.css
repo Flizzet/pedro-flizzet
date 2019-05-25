@@ -21,7 +21,7 @@ body {
   height: calc(100vh - 100px);
   bottom: 40px;
   left: 40px;
-  box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: -10px 10px 0px rgba(0, 0, 0, 0.2);
   transform: translateX(-100vw);
 }
 #main::-webkit-scrollbar {
@@ -111,4 +111,15 @@ button:focus {
   margin: 0px;
   color: black;
   text-transform: uppercase;
+}
+
+/* Scrollto sidebar */
+.scrollto-page-bar {
+  position: fixed;
+  top: 80px;
+  left: 15px;
+  height: calc(100vh - 140px);
+  width: 10px;
+  border: 3px solid var(--orange);
+  border-right-width: 0px;
 }

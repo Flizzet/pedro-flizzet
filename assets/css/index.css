@@ -1,73 +1,52 @@
-/* Intro jumbo */
-#intro {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 100%;
-    width: 100%;
-    transform: translate(-50%, -50%);
-    background-color: var(--darkestblue);
+/* About */
+#about {
+    border-top: 1px solid var(--orange);
+    background-color: var(--lightorange);
+    margin-top: 0px;
 }
-
-/* Intro text */
-.intro-text {
-    position: absolute;
-    top: 50%;
-    width: auto;
+#about .about-text {
     pointer-events: none;
-    position: relative;
-    text-align: center;
-    transform: translateY(-50%);
-    animation: intro-text-pop 0.6s forwards 1.9s;
-    animation-timing-function: cubic-bezier(0, 0.9, 0.5, 1.2);
+    --border-width: 5px;
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    padding: var(--defaultpadding);
 }
-.intro-text h1 {
-    opacity: 0;
-    position: relative;
-    font-family: var(--secondaryfont);
-    font-size: 4vw;
-    padding: 0px 0px 20px 0px;
-    text-shadow: 0px 8px 10px rgba(0, 0, 0, 0.3);
-    animation: fade-down 0.5s forwards 0.2s;
-    animation-timing-function: cubic-bezier(0, 0.9, 0.5, 1.2);
-}
-.intro-text h1::after {
+#about .about-text::after {
     content: "";
     position: absolute;
     bottom: 0px;
-    left: 50%;
-    width: 0%;
+    left: 0px;
+    width: 40%;
     height: 0px;
-    border-bottom: 3px solid var(--accentcolor);
-    transform: translateX(-50%);
-    animation: expand-intro-text-border 0.3s forwards 0.75s;
-    animation-timing-function: cubic-bezier(0, 0.9, 0.5, 1.2);
+    border-bottom: var(--border-width) dotted white;
+    /* transform: translateX(-50%); */
+    margin-left: var(--defaultpadding);
 }
-.intro-text h3 {
-    opacity: 0;
-    font-size: 1.5vw;
-    margin-top: 0px;
-    animation: fade-up 0.3s forwards 1.25s;
-    animation-timing-function: cubic-bezier(0, 1.2, 0.5, 1.3);
+#about .about-text h1 {
+    position: relative;
+    font-family: var(--bigheaderfont);
+    font-weight: 700;
+    font-size: 5vh;
+    /* text-align: right; */
+    color: black;
 }
-
-/* Intro socials */
-.intro-socials {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+#about .about-text h1::after {
+    content: "";
     position: absolute;
-    top: 75%;
-    width: 100%;
+    width: 40%;
+    height: 0px;
+    bottom: 0px;
+    left: 0px;
+    /* border-bottom: var(--border-width) dashed white; */
+    transform: translateY(100%);
+    /* margin-left: calc(var(--defaultpadding) * -1); */
 }
-.intro-socials .social-icon {
-    font-size: 3vw;
-    margin: 0px 10px;
-    transition: 0.3s;
-    transition-timing-function: cubic-bezier(0, 1.2, 0.5, 1.3);
-}
-.intro-socials .social-icon:hover {
-    transform: translateY(-5px);
+#about .about-text p {
+    font-family: var(--secondaryfont);
+    font-size: 3.5vh;
 }
 
 /* Projects */
@@ -231,16 +210,6 @@
     }
     100% {
         left: 100%;
-    }
-}
-
-@keyframes start-page-close {
-    0% {
-        /* background-color: var(--lightdarkestblue); */
-    }
-    100% {
-        /* transform: translateX(100vw); */
-        /* background-color: rgba(255, 255, 255, 0); */
     }
 }
 

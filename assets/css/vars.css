@@ -3,11 +3,13 @@
     --darkestblue: #1c2326;
     --lightdarkestblue: #38464c;
     --darkblue: #015b7b;
+    --lightorange: #e2733f;
     --orange: #e2652b;
     --darkishorange: #c95b28;
     --darkorange: #845147;
     --lightblue: #5dbbbc;
     --lightgray: #e8e9e4;
+    --lightishgray: #dadbd6;
     --darkgray: #878787;
     --navbarbgcolor: var(--darkestblue);
     --navbarscrolledbgcolor: var(--lightgray);
@@ -28,6 +30,7 @@
     --secondaryfont: 'Roboto Slab', serif;
     --heavyfont: 'Abril Fatface', serif;
     --sectionheaderfont: 'Alfa Slab One', serif;
+    --bigheaderfont: 'Staatliches', sans-serif;
 
     /* Font Sizes */
     --mediumfontsize: 4vw;

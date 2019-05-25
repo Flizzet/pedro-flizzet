@@ -42,9 +42,7 @@
 }
 #start-page .uncover-container::after {
     right: 0px;
-    /* border-color: var(--orange); */
     background-color: rgba(200, 200, 200, 1);
-    /* background-color: var(--darkorange); */
 }
 #start-page .uncover-container .glare {
     position: absolute;
@@ -309,7 +307,7 @@
     transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 #start-page .intro-header h1 {
-    font-family: 'Staatliches', sans-serif;
+    font-family: var(--bigheaderfont);
     color: var(--lightgray);
     font-weight: 500;
     font-size: 13vh;

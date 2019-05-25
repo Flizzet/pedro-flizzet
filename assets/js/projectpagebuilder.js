@@ -1,7 +1,7 @@
 function addProjectPage(project, index) {
     // Create page div
     var page = document.createElement("div");
-    var pageClasses = index % 2 == 0 ? 'project-page half-page' : 'project-page half-page right';
+    var pageClasses = index % 2 == 0 ? 'project-page half-page scrollto-page' : 'project-page half-page scrollto-page right';
 
     // Add classes to page
     page.setAttribute('class', pageClasses);

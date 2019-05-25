@@ -25,9 +25,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-}
-#about.active .loading-graphic img {
-    animation: rotate-loading-graphic 5.0s infinite linear;
+    animation: rotate-loading-graphic 10.0s infinite linear;
 }
 
 #about .about-background {
@@ -311,7 +309,7 @@
         transform: translate(-50%, -50%) scale(1.0);
     }
     100% {
-        left: 90%;
+        left: 75%;
         transform: translate(-50%, -50%) scale(1.75);
     }
 }

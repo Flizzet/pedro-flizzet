@@ -49,6 +49,7 @@ function closeIntro() {
             left: "+=100vw"
         }, 400, "easeOutQuart", function() {
             // Main page finished swiping in
+            FlizAnimator.animate(AnimPages.ABOUT);
         });
     }, 300);
 

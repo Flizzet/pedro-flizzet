@@ -16,7 +16,7 @@ body {
   position: absolute;
   overflow-x: hidden;
   overflow-y: scroll;
-  background-color: var(--darkestblue);
+  background-color: var(--lightishgray);
   width: calc(100vw - 80px);
   height: calc(100vh - 100px);
   bottom: 40px;

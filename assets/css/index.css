@@ -1,8 +1,23 @@
 /* About */
 #about {
-    border-top: 1px solid var(--orange);
+    border-top: 1px solid var(--orange);    
     background-color: var(--lightorange);
     margin-top: 0px;
+}
+#about::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    height: 200%;
+    width: 40%;
+    transform: translateY(-50%) rotate(-9deg);
+    background-color: white;
+    opacity: 0.15;
+    margin-left: -200vw;
+}
+#about.active::before {
+    margin-left: 0px;
 }
 #about .about-text {
     pointer-events: none;

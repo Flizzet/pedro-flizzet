@@ -19,7 +19,7 @@ function setUpProjectPages() {
 
     for (var i in allPages) {
         if (i == 0) {
-            // pageClicked(allPages[i], AllProjects[i]);
+            pageClicked(allPages[i], AllProjects[i]);
         }
     }
 }
